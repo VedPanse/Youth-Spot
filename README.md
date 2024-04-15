@@ -6,6 +6,9 @@
 3. Check the __todo file in the main path
 4. Delete the todo task after completion. While committing, mention completed [task name].
 
+## Catchy Line
+-Ideas here- 
+
 
 ## Launch Page requirements
 1. Contact Us section
@@ -15,5 +18,13 @@
 Idea : Let's not make seperate page for these 3 features in launch page. Just scroll down for that section
 
 ## Main web features
-1. Sign - in 
-2. Find event through search (event discovery)
+
+### 1. Sign - in 
+
+### 2. Find event through search (event discovery)
+    -> Find by name, organization, type of event, or location (obviously within the campus, eg. hall)
+
+### 3. Events
+    -> Frame of the event - like a rectangle
+        has it's photo, and name of the event at bottom
+        the way BookMyShow has movie listing on it's homepage
