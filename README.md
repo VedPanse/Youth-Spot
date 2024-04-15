@@ -16,4 +16,4 @@ Idea : Let's not make seperate page for these 3 features in launch page. Just sc
 
 ## Main web features
 1. Sign - in 
-2. Find event through search (event discoverey)
+2. Find event through search (event discovery)
