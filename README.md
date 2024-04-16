@@ -59,5 +59,7 @@ Provide cross connection between other services like:-
 > Features that set us apart.
 
 
-[Visuals](#visuals)
+1. [Visuals](#visuals)
+2. [Ensures authenticity](#ensures-authenticity)
+3. [Support for cross-platform](#support-for-cross-platform)
 ****
