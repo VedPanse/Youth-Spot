@@ -12,6 +12,7 @@ Used to document developer features.
 8. Contains profile pic of host.
 9. Has the request more information option.
 10. Has verification marks for verified orgs.
+11. Report event button
 
 # Host form
 1. A form that allows hosts to create a new event and post it.
@@ -25,3 +26,4 @@ Used to document developer features.
 
 # Ensuring authenticity of events.
 1. Applications from clubs to get verified.
+2. If 5 or more reports against a host are received, the host is background-checked by developers and account may be suspended.
