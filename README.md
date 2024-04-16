@@ -39,10 +39,14 @@ Add bookmarks to events that you really want to go.
 
 ## Visuals
 1. Monitor registrations and other advertisements using graphs.
+2. Provide a full stack dashboard that contains tag-wise data.
 
 ****
 
 # Features for nerds
+
+## Ensures authenticity
+Developers receive applications from event organizers to get verified.
 
 ## Support for cross-platform
 Provide cross connection between other services like:-
