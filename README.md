@@ -28,3 +28,4 @@ Idea : Let's not make seperate page for these 3 features in launch page. Just sc
     -> Frame of the event - like a rectangle
         has it's photo, and name of the event at bottom
         the way BookMyShow has movie listing on it's homepage
+[Developer notes here](.notes/README.md)
