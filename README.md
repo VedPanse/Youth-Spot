@@ -32,6 +32,13 @@ Find by name, organization, type of event, or location (obviously within the cam
 
 ****
 
+# Features for hosts
+
+## Visuals
+1. Monitor registrations and other advertisements using graphs.
+
+****
+
 # Features for nerds
 
 ## Support for cross-platform
@@ -39,4 +46,9 @@ Provide cross connection between other services like:-
    1. Discord
    > more ideas
 
+****
+
+# Flagships
+> Features that set us apart.
+[Visuals](## Visuals)
 ****
