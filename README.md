@@ -1,4 +1,4 @@
-# YouthSpot
+# Youth Spot
 
 ## Steps for developers
 1. Clone this github repository using VSCode
