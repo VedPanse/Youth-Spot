@@ -20,7 +20,7 @@ Idea : Let's not make seperate page for these 3 features in launch page. Just sc
 
 ****
 
-# Features
+# Features for users
 
 ## Sign - in 
 
@@ -28,12 +28,15 @@ Idea : Let's not make seperate page for these 3 features in launch page. Just sc
 Find by name, organization, type of event, or location (obviously within the campus, eg. hall)
 
 ## Events
-Frame of the event - like a rectangle
-        has it's photo, and name of the event at bottom
-        the way BookMyShow has movie listing on it's homepage
 [Developer notes here](.notes/README.md)
+
+****
+
+# Features for nerds
 
 ## Support for cross-platform
 Provide cross connection between other services like:-
    1. Discord
    > more ideas
+
+****
