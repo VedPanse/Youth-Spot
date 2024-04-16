@@ -6,6 +6,7 @@ body {
     font-family: "IBM Plex Sans", sans-serif;
     background-image: url(../images/mesh.png);
     color: #D1D3D4;
+    font-weight: 400;
 }
 
 nav {
@@ -85,4 +86,44 @@ section#intro p {
 .btn-transparent {
     background-color: transparent;
 
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 400;
+}
+
+input {
+    background-color: black;
+    border: transparent;
+    padding: 7.5px 6px 7.5px 5px;
+    border-bottom: 1px solid #405BFF;
+    width: 500px;
+    display: block;
+    margin-top: 15px;
+    color: white;
+}
+
+form {
+    background-color: #282828;
+    padding: 20px;
+    border-radius: 5px;
+    min-width: 500px;
+    margin: auto;
+    text-align: center;
+}
+
+a {
+    color: #7084ff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #7084ff;
+}
+
+form a {
+    margin-right: 15px;
 }
