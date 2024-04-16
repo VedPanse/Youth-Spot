@@ -17,6 +17,12 @@ nav {
     color: white;
     margin-left: 100px;
     font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    top: 2.75vh;
+}
+
+.nav-item.nav-link.btn-bg {
+    height: 5vh;
 }
 
 .navbar-brand {
@@ -126,4 +132,12 @@ a:hover {
 
 form a {
     margin-right: 15px;
+}
+
+input#nav-input {
+    width: 20vw;
+    position: relative;
+    left: 4.5%;
+    height: 9vh;
+    top: -1vh;
 }
