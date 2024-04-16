@@ -33,7 +33,7 @@ Frame of the event - like a rectangle
         the way BookMyShow has movie listing on it's homepage
 [Developer notes here](.notes/README.md)
 
-## 4. Support for cross-platform
+## Support for cross-platform
 Provide cross connection between other services like:-
    1. Discord
    > more ideas
