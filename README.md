@@ -47,6 +47,7 @@ Add bookmarks to events that you really want to go.
 
 ## Ensures authenticity
 Developers receive applications from event organizers to get verified.
+[More details](.notes/README.md#ensuring-authenticity-of-events)
 
 ## Support for cross-platform
 Provide cross connection between other services like:-
