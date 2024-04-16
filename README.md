@@ -30,6 +30,9 @@ Find by name, organization, type of event, or location (obviously within the cam
 ## Events
 [Developer notes here](.notes/README.md)
 
+## Bookmarks
+Add bookmarks to events that you really want to go.
+
 ****
 
 # Features for hosts
