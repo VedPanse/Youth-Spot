@@ -7,7 +7,7 @@
 4. Delete the todo task after completion. While committing, mention completed [task name].
 
 # Catchy Line
--Ideas here- 
+> Ideas here
 
 ****
 
