@@ -52,7 +52,7 @@ Developers receive applications from event organizers to get verified.
 ## Support for cross-platform
 Provide cross connection between other services like:-
    1. Discord
-   > more ideas
+   2. Google forms
 
 ****
 
