@@ -21,8 +21,8 @@ def log_in():
     if request.method == "POST":
         username: str = request.form.get("username")
         password: str = request.form.get("password")
-        return password
-    return "Not found bruh"
+        return f"Username: {username}, Password: {password}"
+    return render_template("ErrorTemplates/NotFound.html")
 
 @app.route("/sign-up.html")
 def load_sign_up():
