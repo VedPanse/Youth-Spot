@@ -53,6 +53,7 @@ Developers receive applications from event organizers to get verified.
 Provide cross connection between other services like:-
    1. Discord
    2. Google forms
+   3. Uber / Lyft to take cabs to off-campus locations.
 
 ****
 
