@@ -51,12 +51,6 @@ input#search {
     display: inline-block;
 }
 
-section#intro {
-    height: 100vh;
-    width: 100vw;
-    text-align: center;
-}
-
 div.center {
     position: absolute;
     top: 50%;
@@ -66,11 +60,6 @@ div.center {
 
 h1.gradient {
     font-size: 102px;
-    font-weight: 400;
-}
-
-section#intro p {
-    font-size: 24px;
     font-weight: 400;
 }
 
@@ -104,26 +93,6 @@ h3 {
     font-weight: 400;
 }
 
-section#sign-in input {
-    background-color: black;
-    border: transparent;
-    padding: 7.5px 6px 7.5px 5px;
-    border-bottom: 1px solid #405BFF;
-    width: 500px;
-    display: block;
-    margin-top: 15px;
-    color: white;
-}
-
-section#sign-in form {
-    background-color: #282828;
-    padding: 20px;
-    border-radius: 5px;
-    min-width: 500px;
-    margin: auto;
-    text-align: center;
-}
-
 a {
     color: #7084ff;
     text-decoration: none;
@@ -132,8 +101,4 @@ a {
 a:hover {
     text-decoration: underline;
     color: #7084ff;
-}
-
-form a {
-    margin-right: 15px;
 }

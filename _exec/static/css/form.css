@@ -1,0 +1,24 @@
+section#sign-in input {
+    background-color: black;
+    border: transparent;
+    padding: 7.5px 6px 7.5px 5px;
+    border-bottom: 1px solid #405BFF;
+    width: 500px;
+    display: block;
+    margin-top: 15px;
+    color: white;
+}
+
+section#sign-in form {
+    background-color: #282828;
+    padding: 20px;
+    border-radius: 5px;
+    min-width: 500px;
+    margin: auto;
+    text-align: center;
+}
+
+
+section#sign-in form a {
+    margin-right: 15px;
+}
