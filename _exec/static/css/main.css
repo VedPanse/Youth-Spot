@@ -10,30 +10,34 @@ body {
 }
 
 nav {
+    width: 100vw;
     background-color: #282828;
 }
 
-.nav-item.nav-link {
+.nav-item .nav-link {
     color: white;
-    margin-left: 100px;
-    font-family: Arial, Helvetica, sans-serif;
-    position: relative;
-    top: 2.75vh;
-}
-
-.nav-item.nav-link.btn-bg {
-    height: 5vh;
+    margin-right: 40px;
+    text-align: center;
 }
 
 .navbar-brand {
     color: white;
-    margin-left: 20px;
 }
 
 .navbar-nav {
+    margin: auto;
+}
+
+input#search {
+    background-color: black !important;
+    border: transparent;
+    color: white;
+    border-bottom: 2px solid #405BFF;
+    padding: 7.5px 6px 7.5px 5px;
     position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0%);
+    right: 0%;
+    top: 0%;
+    width: 300px;
 }
 
 .gradient {
@@ -100,7 +104,7 @@ h3 {
     font-weight: 400;
 }
 
-input {
+section#sign-in input {
     background-color: black;
     border: transparent;
     padding: 7.5px 6px 7.5px 5px;
@@ -111,7 +115,7 @@ input {
     color: white;
 }
 
-form {
+section#sign-in form {
     background-color: #282828;
     padding: 20px;
     border-radius: 5px;
@@ -132,12 +136,4 @@ a:hover {
 
 form a {
     margin-right: 15px;
-}
-
-input#nav-input {
-    width: 20vw;
-    position: relative;
-    left: 4.5%;
-    height: 9vh;
-    top: -1vh;
 }

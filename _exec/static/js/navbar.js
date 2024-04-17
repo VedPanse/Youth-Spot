@@ -1,5 +1,10 @@
-fetch('../utility/navbar.html')
-    .then(response => response.text())
-    .then(html => {
-        document.getElementById("navbar").innerHTML = html;
-    });
+window.onload = function() {
+    // Get the navbar element
+    var navbar = document.querySelector("nav");
+
+    // Get the computed height of the navbar
+    var navbarHeight = window.getComputedStyle(navbar).getPropertyValue("height");
+
+    // Display the computed height using an alert
+    document.querySelector("input#search").style.height = navbarHeight;
+};
