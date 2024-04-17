@@ -21,6 +21,12 @@
     <link href="../static/css/form.css" rel="stylesheet">
 
     <title>Youth Spot</title>
+
+    <style>
+        input {
+            display: inline;
+        }
+    </style>
 </head>
 
 <body>
@@ -53,7 +59,7 @@
     </nav>
 
 
-    <section id="log-in">
+    <!-- <section id="log-in">
         <div class="center">
             <form id="login-form" action="someActionReplaceThisPlease">
                 <h2 class="gradient">log in</h2><br><br>
@@ -63,6 +69,26 @@
                 <a href="forgot-password">Forgot my password</a><br><br>
                 <button class="btn-bg" type="submit">Submit</button>
             </form>
+        </div>
+    </section> -->
+
+    <section id="log-in">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="col-lg-6">
+                    <h1>Log In</h1>
+                </div>
+            </div>
+            <div class="col-lg-6" style="position: relative;">
+                <form id="login-form" action="logIn">
+                    <input placeholder="Username" type="text" required>
+                    <input placeholder="Password" type="password" required>
+                    <button type="submit" class="btn-bg">Log In</button>
+                    <a href="sign-up.html" class="no-underline"><button type="button" class="btn-transparent">Sign Up</button></a>
+                </form><br><br>
+                <a href="forgotUsername">Forgot username?</a>
+                <a href="forgotPassword">Forgot password?</a>
+            </div>
         </div>
     </section>
 

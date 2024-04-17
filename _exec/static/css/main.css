@@ -73,21 +73,19 @@ h1.gradient.big {
     min-height: 43px;
     border: transparent;
     text-align: center;
-    margin-left: 15px;
-    margin-right: 15px;
-}
-
-.btn-bg:hover {
-    cursor: pointer;
-}
-
-.btn-transparent:hover {
-    text-decoration: underline;
 }
 
 .btn-transparent {
     background-color: transparent;
+    border: 1px solid #405BFF;
+    color: white;
 
+}
+
+.btn-bg:hover,
+.btn-transparent:hover {
+    cursor: pointer;
+    text-decoration: none;
 }
 
 h1,
@@ -122,4 +120,8 @@ a:hover {
 
 .blob.green {
     background-color: #40ffaf;
+}
+
+a.no-underline {
+    text-decoration: none;
 }

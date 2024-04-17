@@ -35,3 +35,7 @@ section#pricing {
     text-align: center;
     /* background: linear-gradient(to right, black, black, black, #405BFF); */
 }
+
+a#host-events {
+    margin-right: 15px;
+}
