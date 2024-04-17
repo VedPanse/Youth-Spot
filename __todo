@@ -5,11 +5,11 @@
 TODO FOR ROHAN
 - Edit README.md to update features required to be built
 - Come up with a catchy line
-- Help DEVASHISH with sign in logic
+- Help DEVASHISH with log in logic
 
 TODO FOR VED
-- Make the search box on sign-in.html bigger
-- Develop sign-in and log-in page for Devashish to work with
+- Make the search box on log-in.html bigger
+- Develop log-in and log-in page for Devashish to work with
 - Develop a way to store the whole nav code in one place and keep reusing it.
 - Develop UI
 - Develop prototype
@@ -17,4 +17,4 @@ TODO FOR VED
 - Develop landing page
 
 TODO FOR DEVASHISH
-- Come up with sign in logic
+- Come up with log in logic

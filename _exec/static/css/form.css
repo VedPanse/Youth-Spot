@@ -1,4 +1,4 @@
-section#sign-in form#signin-form input {
+section#log-in form#login-form input {
     background-color: black;
     border: transparent;
     padding: 7.5px 6px 7.5px 5px;
@@ -9,7 +9,7 @@ section#sign-in form#signin-form input {
     color: white;
 }
 
-section#sign-in form#signin-form {
+section#log-in form#login-form {
     background-color: #282828;
     padding: 20px;
     border-radius: 5px;
@@ -19,6 +19,6 @@ section#sign-in form#signin-form {
 }
 
 
-section#sign-in form#signin-form a {
+section#log-in form#login-form a {
     margin-right: 15px;
 }

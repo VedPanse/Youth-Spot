@@ -22,7 +22,7 @@ Idea : Let's not make seperate page for these 3 features in launch page. Just sc
 
 # Features for users
 
-## Sign - in 
+## log - in 
 
 ## Find event through search (event discovery)
 Find by name, organization, type of event, or location (obviously within the campus, eg. hall)
