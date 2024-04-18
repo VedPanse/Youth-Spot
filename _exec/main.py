@@ -61,6 +61,10 @@ def search():
 def load_events():
     return render_template("events.html")
 
+@app.route("/event-description.html")
+def load_event_description():
+    return render_template("event-description.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)
