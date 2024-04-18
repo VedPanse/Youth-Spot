@@ -1,39 +1,27 @@
 const ticketDiv = document.querySelector("div#tickets");
-const discordDiv = document.querySelector("div#discord")
-const locationDiv = document.querySelector("div#location")
+const discordDiv = document.querySelector("div#discord");
+const locationDiv = document.querySelector("div#location");
 
-function showTickets() {
-    ticketDiv.style.display = "block";
-    discordDiv.style.display = "none";
-    locationDiv.style.display = "none";
+function show(element, activeButton) {
+    ticketDiv.style.display = element === ticketDiv ? "block" : "none";
+    discordDiv.style.display = element === discordDiv ? "block" : "none";
+    locationDiv.style.display = element === locationDiv ? "block" : "none";
 
     document.querySelectorAll(".second-nav").forEach((item) => {
         item.classList.remove("active");
     });
 
-    document.querySelector("#get-tickets").classList.add("active");
+    document.querySelector(activeButton).classList.add("active");
+}
+
+function showTickets() {
+    show(ticketDiv, "#get-tickets");
 }
 
 function showDiscord() {
-    ticketDiv.style.display = "none";
-    discordDiv.style.display = "block";
-    locationDiv.style.display = "none";
-
-    document.querySelectorAll(".second-nav").forEach((item) => {
-        item.classList.remove("active");
-    });
-
-    document.querySelector("#join-discord-button").classList.add("active");
+    show(discordDiv, "#join-discord-button");
 }
 
 function showLocation() {
-    ticketDiv.style.display = "none";
-    discordDiv.style.display = "none";
-    locationDiv.style.display = "block";
-
-    document.querySelectorAll(".second-nav").forEach((item) => {
-        item.classList.remove("active");
-    });
-
-    document.querySelector("#location-button").classList.add("active");
+    show(locationDiv, "#location-button");
 }
