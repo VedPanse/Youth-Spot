@@ -38,6 +38,7 @@ input#search {
     right: 0%;
     top: 0%;
     width: 300px;
+    padding-left: 10px;
 }
 
 .gradient {
@@ -86,6 +87,14 @@ h1.gradient.big {
 .btn-transparent:hover {
     cursor: pointer;
     text-decoration: none;
+}
+
+.btn-bg:hover {
+    background-color: #3247d0;
+}
+
+.btn-transparent:hover {
+    background-color: #405BFF;
 }
 
 h1,
