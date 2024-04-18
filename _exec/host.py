@@ -1,9 +1,12 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 import os
 import time
 import stat
 
 app = Flask(__name__)
+
+def return_error():
+    return render_template("ErrorTemplates/NotFound.html")
 
 
 @app.route("/")
@@ -22,24 +25,30 @@ def log_in():
         username: str = request.form.get("username")
         password: str = request.form.get("password")
         return f"Username: {username}, Password: {password}"
-    return render_template("ErrorTemplates/NotFound.html")
+    return return_error()
 
 @app.route("/sign-up.html")
-def load_sign_up():
-    return render_template("sign-up.html")
+def load_sign_up(msg=''):
+    return render_template("sign-up.html", msg=msg)
 
 @app.route("/sign-up", methods=["GET", "POST"])
 def sign_up():
     if request.method == "POST":
-        username: str = request.form.get("username")
-        password: str = request.form.get("password")
-        email: str = request.form.get("email")
-        confirm_password: str = request.form.get("confirm_password")
+        username = request.form.get("username")
+        password = request.form.get("password")
+        email = request.form.get("email")
+        confirm_password = request.form.get("confirm_password")
 
         if password != confirm_password:
-            return render_template("sign-up.html", msg="Password mismatched")
+            # Passwords don't match, reload sign-up page with error message
+            return load_sign_up(msg="Password mismatched")
+        else:
+            # Passwords match, redirect to events page
+            return redirect("/events.html")  # Use redirect to navigate to events page
     
-    return load_events()
+    # GET request or no error message specified, return error page
+    return return_error()
+
 
 
 @app.route("/events.html")
