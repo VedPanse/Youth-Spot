@@ -79,7 +79,7 @@ h1.gradient.big {
 .btn-transparent {
     background-color: transparent;
     border: 1px solid #405BFF;
-    color: white;
+    color: #405BFF;
 
 }
 
@@ -87,6 +87,7 @@ h1.gradient.big {
 .btn-transparent:hover {
     cursor: pointer;
     text-decoration: none;
+    color: white;
 }
 
 .btn-bg:hover {
@@ -140,4 +141,18 @@ div.warning {
     border: 1px solid red;
     background-color: rgb(128, 0, 0);
     color: white;
+}
+
+#host-events {
+    margin: auto !important;
+    text-align: center;
+}
+
+section#intro {
+    text-align: center;
+}
+
+section#intro p {
+    font-size: 24px;
+    font-weight: 400;
 }
