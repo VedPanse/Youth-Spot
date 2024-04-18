@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+        rel="stylesheet">
+
+    <!-- IMPORTED CSS -->
+    <link href="../static/css/main.css" rel="stylesheet">
+    <link href="../static/css/form.css" rel="stylesheet">
+
+    <title>Youth Spot</title>
+
+    <style>
+        input {
+            display: inline;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="index.html">Youth Spot</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#features">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn-bg" href="events.html">Host Events</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="log-in.html">Log In →</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input id="search" type="search" placeholder="Search" aria-label="Search">
+            </form>
+        </div>
+    </nav>
+
+    <section id="log-in">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="col-lg-6">
+                    <h1>Sign Up</h1><br>
+                    <p>Put something here</p>
+                </div>
+            </div>
+            <div class="col-lg-6" style="position: relative;">
+                <form id="login-form" action="sign-up" method="post">
+                    {% if msg | length != 0 %}
+                    <div class="warning">
+                        {{msg}}
+                    </div>
+                    {% endif %}
+                    <input placeholder="Username" type="text" required name="username">
+                    <input placeholder="Email" type="email" required name="email" style="margin-bottom: 5px;">
+                    <input placeholder="Password" type="password" required name="password">
+                    <input placeholder="Confirm Password" type="password" required name="confirm_password">
+                    <button type="submit" class="btn-bg">Sign Up</button>
+                    <a href="log-in.html" class="no-underline"><button type="button" class="btn-transparent">Log in</button></a>
+                </form><br><br>
+                <a href="forgotUsername">Forgot username?</a>
+                <a href="forgotPassword">Forgot password?</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <script src="../static/js/navbar.js"></script>
+</body>
+
+</html>

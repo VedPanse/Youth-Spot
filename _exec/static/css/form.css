@@ -55,3 +55,8 @@ section#log-in a {
     margin: auto;
     margin-right: 20px;
 }
+
+div.warning {
+    margin-bottom: 5px;
+    width: 605px;
+}

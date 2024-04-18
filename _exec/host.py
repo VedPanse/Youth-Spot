@@ -28,6 +28,19 @@ def log_in():
 def load_sign_up():
     return render_template("sign-up.html")
 
+@app.route("/sign-up", methods=["GET", "POST"])
+def sign_up():
+    if request.method == "POST":
+        username: str = request.form.get("username")
+        password: str = request.form.get("password")
+        email: str = request.form.get("email")
+        confirm_password: str = request.form.get("confirm_password")
+
+        if password != confirm_password:
+            return render_template("sign-up.html", msg="Password mismatched")
+    
+    return load_events()
+
 
 @app.route("/events.html")
 def load_events():

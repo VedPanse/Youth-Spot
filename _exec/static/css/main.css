@@ -125,3 +125,10 @@ a:hover {
 a.no-underline {
     text-decoration: none;
 }
+
+div.warning {
+    padding: 10px;
+    border: 1px solid red;
+    background-color: rgb(128, 0, 0);
+    color: white;
+}
