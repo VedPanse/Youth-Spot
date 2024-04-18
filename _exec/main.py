@@ -49,7 +49,13 @@ def sign_up():
     # GET request or no error message specified, return error page
     return return_error()
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    if request.method == "POST":
+        search_query: str = request.form.get("searchQuery")
+        return search_query
 
+    return return_error()
 
 @app.route("/events.html")
 def load_events():
