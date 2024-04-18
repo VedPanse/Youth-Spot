@@ -23,13 +23,15 @@ section#intro-to-event {
     width: 100vw;
     text-align: center;
 }
+
 #header ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     display: flex;
-    justify-content: center; /* Horizontally center the items */
+    justify-content: center;
+    /* Horizontally center the items */
 }
 
 
@@ -59,4 +61,27 @@ section#intro-to-event {
 .context {
     width: 80%;
     margin: auto;
+}
+
+.row.event-description img {
+    width: 100%;
+}
+
+.row.event-description span {
+    color: #ebff38;
+    text-transform: uppercase;
+}
+
+.row.event-description span.date {
+    color: white;
+    text-transform: capitalize;
+}
+
+button.btn-bg.transact {
+    width: 50%;
+}
+
+div#discord,
+div#location {
+    display: none;
 }
