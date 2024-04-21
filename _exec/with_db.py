@@ -2,9 +2,7 @@ from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
 
-def return_error():
-    return render_template("ErrorTemplates/NotFound.html")
-
+# Importing the database functions defined above
 
 @app.route("/")
 @app.route("/index.html")
@@ -19,9 +17,15 @@ def load_log_in():
 @app.route("/log-in", methods=["GET", "POST"])
 def log_in():
     if request.method == "POST":
-        username: str = request.form.get("username")
-        password: str = request.form.get("password")
-        return f"Username: {username}, Password: {password}"
+        username = request.form.get("username")
+        password = request.form.get("password")
+        
+        user = get_user(username)
+        if user and user[2] == password:  # Check if user exists and passwords match
+            return f"Welcome, {username}!"
+        else:
+            return "Invalid username or password."
+    
     return return_error()
 
 @app.route("/sign-up.html")
@@ -37,31 +41,14 @@ def sign_up():
         confirm_password = request.form.get("confirm_password")
 
         if password != confirm_password:
-            # Passwords don't match, reload sign-up page with error message
             return load_sign_up(msg="Password mismatched")
         else:
-            # Passwords match, redirect to events page
-            return redirect("/events.html")  # Use redirect to navigate to events page
+            add_user(username, password)  # Add the user to the database
+            return redirect("/events.html")
     
-    # GET request or no error message specified, return error page
     return return_error()
 
-@app.route("/search", methods=["GET", "POST"])
-def search():
-    if request.method == "POST":
-        search_query: str = request.form.get("searchQuery")
-        return search_query
-
-    return return_error()
-
-@app.route("/events.html")
-def load_events():
-    return render_template("events.html")
-
-@app.route("/event-description.html")
-def load_event_description():
-    return render_template("event-description.html")
-
+# The rest of your Flask routes...
 
 if __name__ == "__main__":
     app.debug = True
