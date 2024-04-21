@@ -23,7 +23,7 @@ def create_table(cursor):
         pass
 
 
-def add_data(cursor, username: str, password: str, email_id: str) -> int:
+def add_data(cursor, username: str, password: bytes, email_id: str) -> int:
     cursor.execute("SELECT * FROM user_credentials WHERE username = ?", (username,))
     if cursor.fetchone() is not None:
         return -1
@@ -86,7 +86,8 @@ def sign_up():
 
         connection, cursor = get_cursor()
         create_table(cursor)
-        add_response: int = add_data(cursor, username, password, email)
+        enc_password: bytes = encrypt(password)
+        add_response: int = add_data(cursor, username, enc_password, email)
 
         if add_response == 0:
             connection.close()
