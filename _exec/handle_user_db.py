@@ -1,55 +1,52 @@
-from flask import Flask, render_template, request, redirect
+import sqlite3 as sq
 
-app = Flask(__name__)
+# Parameters required for sign up form
+# SIGN_UP_PARAMS = ['username', 'password', 'email_id']
 
-# Importing the database functions defined above
+connection: sq.Connection = sq.connect("user_data.db")
+cursor = connection.cursor()
 
-@app.route("/")
-@app.route("/index.html")
-def start_session():
-    return render_template("index.html")
+def create_table() -> None:
+    try:
+        cursor.execute("CREATE TABLE user_credentials (username TEXT, password TEXT, email_id TEXT)")
+    except sq.OperationalError:
+        pass
 
-@app.route("/log-in.html")
-def load_log_in():
-    return render_template("log-in.html")
+def add_data(username: str, password: str, email_id: str) -> int:
+    # Adds data to the table user_credentials
+    # If username already exists, it returns -1
+    # If email_id already exists, it returns 1
+    # Else, it returns 0
 
+    cursor.execute("SELECT * FROM user_credentials WHERE username = ?", (username,))
 
-@app.route("/log-in", methods=["GET", "POST"])
-def log_in():
-    if request.method == "POST":
-        username = request.form.get("username")
-        password = request.form.get("password")
-        
-        user = get_user(username)
-        if user and user[2] == password:  # Check if user exists and passwords match
-            return f"Welcome, {username}!"
-        else:
-            return "Invalid username or password."
-    
-    return return_error()
+    if cursor.fetchone() is not None:
+        # Username already exists
+        return -1
 
-@app.route("/sign-up.html")
-def load_sign_up(msg=''):
-    return render_template("sign-up.html", msg=msg)
+    cursor.execute("SELECT * FROM user_credentials WHERE email_id = ?", (email_id,))
 
-@app.route("/sign-up", methods=["GET", "POST"])
-def sign_up():
-    if request.method == "POST":
-        username = request.form.get("username")
-        password = request.form.get("password")
-        email = request.form.get("email")
-        confirm_password = request.form.get("confirm_password")
+    if cursor.fetchone() is not None:
+        return 1
 
-        if password != confirm_password:
-            return load_sign_up(msg="Password mismatched")
-        else:
-            add_user(username, password)  # Add the user to the database
-            return redirect("/events.html")
-    
-    return return_error()
+    cursor.execute("INSERT INTO user_credentials VALUES (?, ?, ?)", (username, password, email_id))
+    connection.commit()
+    return 0
 
-# The rest of your Flask routes...
+def print_db() -> list[tuple]:
+    rows = cursor.execute("SELECT username, password, email_id FROM user_credentials").fetchall()
+    return rows
 
-if __name__ == "__main__":
-    app.debug = True
-    app.run()
+def read_data(username: str) -> list[tuple]:
+    cursor.execute("SELECT password FROM user_credentials WHERE username = ?", (username,))
+    rows = cursor.fetchall()
+    return rows
+
+# create_table()
+# add_data("Ved_Panse", "jlk", "ved@example.com")
+# add_data("Test", "test_p", "test@example.com")
+# add_data("Other_user", "jlk", "ved@example.com")
+# add_data("Ved_Panse", "jlk", "some@example.com")
+#
+# print(print_db())
+# print(read_data("Test"))
