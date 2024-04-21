@@ -1,35 +1,51 @@
 import sqlite3 as sq
 
-connection: sq.Connection = sq.connect("user_data.db")
+# Parameters required for sign up form
+SIGN_UP_PARAMS = ['username', 'password', 'email_id']
 
-# Adding data
+connection: sq.Connection = sq.connect("user_data.db")
 cursor = connection.cursor()
 
-def create_table():
-    global cursor
-    cursor.execute("CREATE TABLE user_credentials (username TEXT, password TEXT)")
+def create_table() -> None:
+    try:
+        cursor.execute("CREATE TABLE user_credentials (username TEXT, password TEXT, email_id TEXT)")
+    except sq.OperationalError:
+        pass
 
-def add_data(username: str, password: str):
-    cursor.execute(f"INSERT INTO user_credentials VALUES ('{username}', '{password}')")
+def add_data(username: str, password: str, email_id: str) -> [None, int]:
+    # Adds data to the table user_credentials
+    # If username already exists, it returns -1
+    # If email_id already exists, it returns 0
+    # Else, it returns None
 
-# Read data
-def print_db():
-    rows = cursor.execute("SELECT username, password FROM user_credentials").fetchall()
+    cursor.execute("SELECT * FROM user_credentials WHERE username = ?", (username,))
+
+    if cursor.fetchone() is not None:
+        # Username already exists
+        return -1
+
+    cursor.execute("SELECT * FROM user_credentials WHERE email_id = ?", (email_id,))
+
+    if cursor.fetchone() is not None:
+        return 0
+
+    cursor.execute("INSERT INTO user_credentials VALUES (?, ?, ?)", (username, password, email_id))
+    connection.commit()
+
+def print_db() -> list[tuple]:
+    rows = cursor.execute("SELECT username, password, email_id FROM user_credentials").fetchall()
     return rows
 
-def read_data(username: str):
-    # Use parameterized query to avoid SQL injection
+def read_data(username: str) -> list[tuple]:
     cursor.execute("SELECT password FROM user_credentials WHERE username = ?", (username,))
-    # Fetch the result
     rows = cursor.fetchall()
     return rows
 
-
-# Make it work
-# create_table()
-add_data("Ved_Panse", "jlk")
-add_data("Test", 'test_p')
+create_table()
+add_data("Ved_Panse", "jlk", "ved@example.com")
+add_data("Test", "test_p", "test@example.com")
+add_data("Other_user", "jlk", "ved@example.com")
+add_data("Ved_Panse", "jlk", "some@example.com")
 
 print(print_db())
-
 print(read_data("Test"))
