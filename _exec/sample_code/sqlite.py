@@ -1,7 +1,7 @@
 import sqlite3 as sq
 
 # Parameters required for sign up form
-SIGN_UP_PARAMS = ['username', 'password', 'email_id']
+# SIGN_UP_PARAMS = ['username', 'password', 'email_id']
 
 connection: sq.Connection = sq.connect("user_data.db")
 cursor = connection.cursor()
