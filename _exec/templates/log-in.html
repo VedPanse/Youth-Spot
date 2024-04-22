@@ -68,7 +68,12 @@
             </div>
             <div class="col-lg-6" style="position: relative;">
                 <form id="login-form" action="log-in" method="post">
-                    <input placeholder="Username" type="text" required name="username">
+                    {% if msg | length != 0 %}
+                    <div class="warning">
+                        {{msg}}
+                    </div>
+                    {% endif %}
+                    <input placeholder="Username / Email Id" type="text" required name="username">
                     <input placeholder="Password" type="password" required name="password">
                     <button type="submit" class="btn-bg">Log In</button>
                     <a href="sign-up.html" class="no-underline"><button type="button" class="btn-transparent">Sign Up</button></a>

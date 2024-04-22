@@ -11,7 +11,7 @@ def get_cursor():
     cursor = connection.cursor()
     return connection, cursor
 
-def clear_database(cursor, PIN) -> None:
+def clear_user_data(cursor, PIN) -> None:
     if PIN == 'Gliderport':
         cursor.execute("DELETE FROM user_credentials")
         cursor.connection.commit()
@@ -47,6 +47,11 @@ def read_data(cursor, username: str) -> list[tuple]:
     rows = cursor.fetchall()
     return rows
 
+def read_email_data(cursor, email: str) -> list[tuple]:
+    cursor.execute("SELECT password FROM user_credentials WHERE email_id = ?", (email,))
+    rows = cursor.fetchall()
+    return rows
+
 # WEBPAGE HANDLING
 @app.route("/")
 @app.route("/index.html")
@@ -62,9 +67,29 @@ def load_log_in():
 @app.route("/log-in", methods=["POST"])
 def log_in():
     if request.method == "POST":
-        username: str = request.form.get("username")
+        user_email: str = request.form.get("username")
         password: str = request.form.get("password")
-        return f"Username: {username}, Password: {password}"
+        connection, cursor = get_cursor()
+
+        password_in_bytes = password.encode("utf-8")
+
+        if "@" in user_email and "." in user_email:
+            hashed_password = read_email_data(cursor, user_email)
+        else:
+            hashed_password = read_data(cursor, user_email)
+
+        connection.close()
+
+        if hashed_password:
+            hashed_password = hashed_password[0][0]
+
+            if bcrypt.checkpw(password_in_bytes, hashed_password):
+                return "Login successful"
+            else:
+                return render_template("log-in.html", msg="Incorrect password")
+        else:
+            return render_template("log-in.html", msg="Incorrect username / email")
+
     return render_template("ErrorTemplates/NotFound.html")
 
 
