@@ -12,6 +12,8 @@ body {
 nav {
     width: 100vw;
     background-color: #282828;
+    position: fixed !important;
+    z-index: 5000;
 }
 
 .nav-item .nav-link {
