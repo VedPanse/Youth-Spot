@@ -63,7 +63,8 @@
             <div class="col-lg-6">
                 <div class="col-lg-6">
                     <h1>Sign Up</h1><br>
-                    <p>Put something here</p>
+                    <p>We collect this information to make one-click registrations possible for you. The information you
+                        enter is shared only with verified event hosts.</p>
                 </div>
             </div>
             <div class="col-lg-6" style="position: relative;">
@@ -73,12 +74,18 @@
                         {{msg}}
                     </div>
                     {% endif %}
-                    <input placeholder="Username" type="text" required name="username">
-                    <input placeholder="Email" type="email" required name="email" style="margin-bottom: 5px;">
+                    <input placeholder="Full Name" type="text" required name="full_name">
+                    <input placeholder="Email" type="email" required name="email">
                     <input placeholder="Password" type="password" required name="password">
                     <input placeholder="Confirm Password" type="password" required name="confirm_password">
+                    <input placeholder="University" type="text" required name="university">
+                    <input placeholder="Major" type="text" required name="major">
+                    <input placeholder="Student PID" type="text" required name="pid">
+                    <input placeholder="Year in the university" type="text" required name="year">
+
                     <button type="submit" class="btn-bg">Sign Up</button>
-                    <a href="log-in.html" class="no-underline"><button type="button" class="btn-transparent">Log in</button></a>
+                    <a href="log-in.html" class="no-underline"><button type="button" class="btn-transparent">Log
+                            in</button></a>
                 </form><br><br>
             </div>
         </div>
