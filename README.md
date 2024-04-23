@@ -55,6 +55,9 @@ Provide cross connection between other services like:-
    2. Google forms
    3. Uber / Lyft to take cabs to off-campus locations.
 
+## Multi-timed events
+If an event is taking place in multiple editions, hosts can ask attendees to choose between the editions.
+
 ****
 
 # Flagships
@@ -64,4 +67,5 @@ Provide cross connection between other services like:-
 1. [Visuals](#visuals)
 2. [Ensures authenticity](#ensures-authenticity)
 3. [Support for cross-platform](#support-for-cross-platform)
+4. [Multi-timed events](#multi-timed-events)
 ****
