@@ -17,28 +17,24 @@ def clear_user_data(cursor, password) -> None:
 
 def create_table(cursor):
     try:
-        cursor.execute("CREATE TABLE IF NOT EXISTS user_credentials (full_name TEXT, email TEXT, password TEXT, university TEXT, major TEXT, pid TEXT, year TEXT)")
+        cursor.execute("CREATE TABLE IF NOT EXISTS user_credentials (first_name TEXT, last_name TEXT, email TEXT, password TEXT, university TEXT, major TEXT, pid TEXT, year TEXT, ethnicity TEXT)")
     except sq.OperationalError:
         pass
 
-def add_data(cursor, full_name: str, email: str, password: bytes, university: str, major: str, pid: bytes, year: str) -> int:
-    cursor.execute("SELECT * FROM user_credentials WHERE full_name = ?", (full_name,))
-    if cursor.fetchone() is not None:
-        return -1
+def add_data(cursor, first_name: str, last_name: str, email: str, password: bytes, university: str, major: str, pid: bytes, year: str, ethnicity: str) -> int:
 
     cursor.execute("SELECT * FROM user_credentials WHERE email = ?", (email,))
     if cursor.fetchone() is not None:
         return 1
 
-    cursor.execute("INSERT INTO user_credentials VALUES (?, ?, ?, ?, ?, ?, ?)", (full_name, email, password, university, major, pid, year))
+    cursor.execute("INSERT INTO user_credentials VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", (first_name, last_name, email, password, university, major, pid, year, ethnicity))
     cursor.connection.commit()
     return 0
 
 def read_data(cursor, identifier: str, is_email: bool = False) -> list[tuple]:
     if is_email:
         cursor.execute("SELECT password FROM user_credentials WHERE email = ?", (identifier,))
-    else:
-        cursor.execute("SELECT password FROM user_credentials WHERE full_name = ?", (identifier,))
+
     rows = cursor.fetchall()
     return rows
 
@@ -73,7 +69,7 @@ def log_in():
             else:
                 return render_template("log-in.html", msg="Incorrect password")
         else:
-            return render_template("log-in.html", msg="Incorrect username / email")
+            return render_template("log-in.html", msg="This email id is not registered")
 
     return render_template("ErrorTemplates/NotFound.html")
 
@@ -87,7 +83,8 @@ def load_sign_up(msg=''):
 @app.route("/sign-up", methods=["POST"])
 def sign_up():
     if request.method == "POST":
-        full_name: str = request.form.get("full_name")
+        first_name: str = request.form.get("first_name")
+        last_name: str = request.form.get("last_name")
         email: str = request.form.get("email")
         password: str = request.form.get("password")
         confirm_password: str = request.form.get("confirm_password")
@@ -95,6 +92,7 @@ def sign_up():
         major: str = request.form.get("major")
         pid: str = request.form.get("pid")
         year: str = request.form.get("year")
+        ethnicity: str = request.form.get("ethnicity")
 
         if password != confirm_password:
             return load_sign_up(msg="Password mismatched")
@@ -103,14 +101,11 @@ def sign_up():
         create_table(cursor)
         enc_password: bytes = encrypt(password)
         enc_pid: bytes = encrypt(pid)
-        add_response: int = add_data(cursor, full_name, email, enc_password, university, major, enc_pid, year)
+        add_response: int = add_data(cursor, first_name, last_name, email, enc_password, university, major, enc_pid, year, ethnicity)
 
         if add_response == 0:
             connection.close()
             return redirect("/events.html")
-        elif add_response == -1:
-            connection.close()
-            return load_sign_up(msg="This username already exists")
         else:
             # Close the connection after using the cursor
             connection.close()
