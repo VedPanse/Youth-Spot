@@ -1,8 +1,11 @@
 import bcrypt
 import sqlite3 as sq
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, session
+import secrets
 
 app = Flask(__name__)
+
+app.secret_key = secrets.token_urlsafe(16)
 
 # TABLE AND DB
 def get_cursor():
@@ -65,7 +68,8 @@ def log_in():
             password_in_bytes = password.encode("utf-8")
 
             if bcrypt.checkpw(password_in_bytes, hashed_password):
-                return "Login successful"
+                session['email'] = email
+                return render_template("events.html")
             else:
                 return render_template("log-in.html", msg="Incorrect password")
         else:
@@ -73,7 +77,14 @@ def log_in():
 
     return render_template("ErrorTemplates/NotFound.html")
 
+@app.route("/log-out")
+def log_out():
+    session.pop('email', default=None)
+    return render_template('index.html')
 
+@app.route("/profile.html")
+def load_profile():
+    return render_template('profile.html')
 
 @app.route("/sign-up.html")
 def load_sign_up(msg=''):
