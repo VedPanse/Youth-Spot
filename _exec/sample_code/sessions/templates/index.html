@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+{% if session['email'] %}
+                <h1>Welcome {{ session['email'] }}!</h1>
+            {% else %}
+                <a href="login.html">Log In</a>
+            {% endif %}
+</body>
+</html>
