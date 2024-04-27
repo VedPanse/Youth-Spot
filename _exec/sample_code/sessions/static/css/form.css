@@ -1,0 +1,61 @@
+/* section#log-in form#login-form input {
+    background-color: black;
+    border: transparent;
+    padding: 7.5px 6px 7.5px 5px;
+    border-bottom: 1px solid #405BFF;
+    width: 500px;
+    display: block;
+    margin-top: 15px;
+    color: white;
+}
+
+section#log-in form#login-form {
+    background-color: #282828;
+    padding: 20px;
+    border-radius: 5px;
+    min-width: 500px;
+    margin: auto;
+    text-align: center;
+}
+
+
+section#log-in form#login-form a {
+    margin-right: 15px;
+} */
+
+section#log-in {
+    width: 95%;
+    margin: auto;
+    margin-top: 5%;
+}
+
+section#log-in form#login-form input {
+    margin-right: 0px;
+    padding-inline: 0px;
+    background-color: black;
+    border: transparent;
+    padding: 7.5px 5px 7.5px 5px;
+    border-radius: 10px;
+    height: 75px;
+    width: 300px;
+    color: white;
+    padding-left: 10px;
+    margin-bottom: 5px;
+}
+
+section#log-in button {
+    display: block;
+    width: 605px;
+    margin-top: 10px;
+    height: 50px;
+}
+
+section#log-in a {
+    margin: auto;
+    margin-right: 20px;
+}
+
+div.warning {
+    margin-bottom: 5px;
+    width: 605px;
+}

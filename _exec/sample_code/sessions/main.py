@@ -27,8 +27,8 @@ def set_email():
     return say_hello()
 
 
-@app.route('/delete_email')
-def delete_email():
+@app.route('/log_out')
+def log_out():
     # Clear the email stored in the session object
     session.pop('email', default=None)
     return '<h1>Session deleted!</h1>'

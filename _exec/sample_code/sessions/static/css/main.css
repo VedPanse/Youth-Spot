@@ -1,0 +1,191 @@
+html,
+body {
+    width: 100vw;
+    min-height: 100vh;
+    height: 100%;
+    font-family: "IBM Plex Sans", sans-serif;
+    background-image: url(../images/mesh.png);
+    color: #D1D3D4;
+    font-weight: 400;
+}
+
+nav {
+    width: 100vw;
+    background-color: #282828;
+    /* position: fixed !important;
+    z-index: 5000; */
+}
+
+.nav-item .nav-link {
+    color: white;
+    margin-right: 40px;
+    text-align: center;
+}
+
+.navbar-brand {
+    color: white;
+}
+
+.navbar-nav {
+    margin: auto;
+}
+
+input#search {
+    background-color: black !important;
+    border: transparent;
+    color: white;
+    border-bottom: 2px solid #405BFF;
+    padding: 7.5px 6px 7.5px 5px;
+    position: absolute;
+    right: 0%;
+    top: 0%;
+    width: 300px;
+    padding-left: 10px;
+}
+
+.gradient {
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-color: #9eadf1;
+    background-image: linear-gradient(90deg, #EAECC6, #2BC0E4);
+    background-size: 100%;
+    display: inline-block;
+}
+
+div.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h1.gradient {
+    font-weight: 400;
+}
+
+h1.gradient.big {
+    font-size: 102px;
+}
+
+.btn-bg {
+    color: white;
+    background-color: #405BFF;
+    min-width: 150px;
+    min-height: 43px;
+    border: transparent;
+    text-align: center;
+}
+
+.btn-transparent {
+    background-color: transparent;
+    border: 1px solid #405BFF;
+    color: #405BFF;
+
+}
+
+.btn-bg:hover,
+.btn-transparent:hover {
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+.btn-bg:hover {
+    background-color: #3247d0;
+}
+
+.btn-transparent:hover {
+    background-color: #405BFF;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 400;
+}
+
+a {
+    color: #7084ff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #7084ff;
+}
+
+.blob {
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+}
+
+.blob.blue {
+    background-color: linear-gradient(#405BFF, black);
+}
+
+.blob.crimson {
+    background-color: #ff4086;
+}
+
+.blob.green {
+    background-color: #40ffaf;
+}
+
+a.no-underline {
+    text-decoration: none;
+}
+
+div.warning {
+    padding: 10px;
+    border: 1px solid red;
+    background-color: rgb(128, 0, 0);
+    color: white;
+}
+
+#host-events {
+    margin: auto !important;
+    text-align: center;
+}
+
+section#intro {
+    text-align: center;
+}
+
+section#intro p {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.stack .card {
+    background-color: #282828;
+    text-align: left;
+    padding: none;
+    margin: none;
+}
+
+.stack .card img {
+    width: 100%;
+    height: 30%;
+    border-bottom: 3px solid #405BFF;
+}
+
+.stack .card .content {
+    padding: 15px;
+    text-align: left;
+}
+
+.stack .card span {
+    color: #ebff38;
+    display: block;
+    text-transform: uppercase;
+}
+
+.stack .card span.date {
+    color: white;
+    font-size: 14px;
+    text-transform: capitalize;
+}
