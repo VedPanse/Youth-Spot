@@ -116,7 +116,7 @@ def sign_up():
 
         if add_response == 0:
             connection.close()
-            return redirect("/events.html")
+            return redirect("/log-in.html")
         else:
             # Close the connection after using the cursor
             connection.close()
