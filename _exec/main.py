@@ -84,7 +84,34 @@ def log_out():
 
 @app.route("/profile.html")
 def load_profile():
-    return render_template('profile.html')
+    if 'email' in session:
+        email = session['email']
+        connection, cursor = get_cursor()
+        cursor.execute("SELECT * FROM user_credentials WHERE email = ?", (email,))
+        user_data = cursor.fetchone()
+        connection.close()
+
+        if user_data:
+            # Convert the user_data tuple to a dictionary with field names as keys
+            user_dict = {
+                'first_name': user_data[0],
+                'last_name': user_data[1],
+                'email': user_data[2],
+                'university': user_data[4],
+                'major': user_data[5],
+                'pid': user_data[6],
+                'year': user_data[7],
+                'ethnicity': user_data[8]
+            }
+
+            # Pass user_dict to the profile template
+            return render_template('profile.html', user_data=user_dict)
+        else:
+            return render_template('ErrorTemplates/NotFound.html', error="User data not found")
+    else:
+        return render_template('ErrorTemplates/NotFound.html', error="User not logged in")
+
+
 
 @app.route("/sign-up.html")
 def load_sign_up(msg=''):
