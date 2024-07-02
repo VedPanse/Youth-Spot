@@ -3,4 +3,6 @@
 2. Switch between multiple colleges.
 3. Can find research and other start-up opportunities.
 4. Find events with ease. - events integrated with discord and other tools.
-5. Get tickets.
+  - Can book Lyft / Uber with one click
+  - People you follow can post what they're currently doing.
+6. Get tickets.
